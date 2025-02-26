@@ -1,0 +1,536 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Более светлый фон */
+    color: #c5c5c5; /* Более мягкий цвет текста */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased; /* Сглаживание шрифтов */
+}
+
+.container {
+    width: 85%; /* Немного шире контейнер */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Стили для шапки */
+.logo-and-title {
+    display: flex;          /* Используем flexbox для выравнивания */
+    align-items: center;    /* Выравниваем элементы по вертикали */
+  }
+  
+  .logo {
+    width: 70px;           /* Задаем ширину логотипа */
+    height: auto;          /*  Сохраняем пропорции */
+    margin-right: 15px;    /* Добавляем небольшой отступ справа от логотипа */
+  }
+  
+  .club-name {
+    font-size: 20px;       /* Задаем размер шрифта для названия */
+    font-weight: bold;     /* Делаем название жирным (опционально) */
+    color: #ffffff;           /* Задаем цвет текста (опционально) */
+  }
+header {
+    background: #000000; /* черный фон */
+    color: #d10000;
+    padding: 20px 0;
+    border-bottom: 1px solid #ffffff; /* Тонкая линия */
+    box-shadow: 0 2px 5px rgba(255, 254, 254, 0.05); /* Легкая тень */
+    position: sticky; /* Фиксированная шапка */
+    top: 0;
+    z-index: 100; /* Чтобы перекрывала контент при прокрутке */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* В строку элементы меню */
+}
+
+header nav li {
+    margin-left: 40px; /* Больше отступ между пунктами */
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+header nav a:hover {
+    color: #555555; /* Яркий цвет при наведении */
+}
+
+/* Стили для секции Hero */
+#hero {
+    background-image: linear-gradient(rgba(102, 100, 100, 0.4), rgba(0, 0, 0, 0.4)), url('C:\Users\osaul\Videos\OneDrive\Изображения\Снимки экрана\Снимок экрана 2025-02-18 183048.png'); /* Замените на свою картинку */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 150px 0;
+    position: relative; /* Для псевдоэлемента ::before */
+}
+
+/* Псевдоэлемент для затемнения */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Дополнительное затемнение */
+    z-index: 0; /* Под текстом */
+}
+
+#hero .container {
+    position: relative;
+    z-index: 1; /* Над затемнением */
+}
+
+#hero h2 {
+    font-size: 48px; /* Очень крупный заголовок */
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3); /* Тень для текста */
+}
+
+#hero p {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#hero .button {
+    background-color: #ffb516;
+    color: #e9e9e9;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px; /* Более скругленные углы */
+    margin-top: 40px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 3px 5px rgba(255, 0, 0, 0.2); /* Тень для кнопки */
+}
+
+#hero .button:hover {
+    background-color: #000000;
+}
+
+/* Стили для секции "О нас" */
+.image-container {
+    position: relative; /* Создать контекст позиционирования */
+    display: inline-block; /* Или block, в зависимости от нужного поведения */
+  }
+  
+  .image-container img {
+    display: block;
+  width: 145%;
+  height: 100%;
+  object-fit: contain; /* Или contain */
+  }
+  image-container {
+    position: relative; /* Создать контекст позиционирования */
+    display: inline-block; /* Или block, в зависимости от нужного поведения */
+  }
+  
+  .image-containere img {
+    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Или contain */
+  }
+  .image-containere {
+    position: relative; /* Создать контекст позиционирования */
+    display: inline-block; /* Или block, в зависимости от нужного поведения */
+  }
+  
+  .text-overlay {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%;
+    left: 50%;
+    transform: translate(-15%, -20%); /* Центрировать текст */
+    
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+  }
+#about {
+    padding: 80px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+#about img {
+    width: 100%; /* Больше картинка */
+    margin-bottom: 30px;
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: auto;
+    color: #666;
+}
+
+.columns-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 столбца равной ширины */
+    grid-template-rows: auto; /* Автоматическая высота строк */
+    gap: 20px; /* Расстояние между столбцами и строками */
+  }
+  
+  .column {
+    display: flex;       /* Для выравнивания строк */
+    flex-direction: column; /* Вертикальное расположение */
+    justify-content: space-between; /* Равномерное распределение строк */
+    padding: 20px;
+    background-color: #0a0808;
+    border: 1px solid #eee1e1;
+    box-sizing: border-box;
+  }
+  
+  /*22222222222*/
+  
+    #sova-day{
+  .sova-container {
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 1500px;
+}
+.container {
+    text-align: center;
+  }
+.sova-images {
+    position: relative;
+    width: 2000px;
+    height: 800px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.control-button {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#slide1:checked ~ .sova-images .slide:nth-child(1),
+#slide2:checked ~ .sova-images .slide:nth-child(2),
+#slide3:checked ~ .sova-images .slide:nth-child(3),
+#slide4:checked ~ .sova-images .slide:nth-child(4),
+#slide5:checked ~ .sova-images .slide:nth-child(5) {
+    opacity: 1;
+}
+#slide1:checked ~ .controls .control-button:nth-child(1),
+#slide2:checked ~ .controls .control-button:nth-child(2),
+#slide3:checked ~ .controls .control-button:nth-child(3),
+#slide4:checked ~ .controls .control-button:nth-child(4),
+#slide5:checked ~ .controls .control-button:nth-child(5) {
+    background: #000000;
+}
+}
+ /* 222222222*/
+  
+  .row {
+    text-align: center; /*  Центрировать текст в строке */
+  }
+
+/* Стили для секции "Галерея" */
+#gallery {
+    background-color: #000000;
+    padding: 80px 0;
+}
+
+#gallery h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Адаптивные колонки */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Плавное увеличение */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Стили для секции "Услуги" */
+#services {
+    padding: 80px 0;
+    background-color: #000000;
+    
+    
+
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #ffffff;
+}
+.container {
+        text-align: center;
+    }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.service {
+    text-align: center;
+    padding: 40px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px); /* Поднятие при наведении */
+}
+
+.service img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.service p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+}
+}
+#план
+{
+    .container {
+        text-align: center;   
+}
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 550px;
+    text-align: center;
+    color: #ffffff;}
+}
+
+/* Стили для подвала */
+#подвал
+{
+ .footer-logo {
+    text-align: center; /* Центрирование по горизонтали */
+    margin-top: 20px; /*  Отступ сверху, если нужно */
+  }
+  
+  .footer-logo img {
+    width: 100px; /*  Размер логотипа */
+    height: auto;
+  }   
+  .container {
+    text-align: center;
+  }
+
+footer {
+    background: #000000;
+    color: #0e0202;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+}
+/* Media Queries для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav {
+        margin-top: 20px;
+    }
+    header nav li {
+        display: block;
+        padding: 10px 0;
+        margin-left: 0;
+    }
+
+    #hero {
+        padding: 100px 0;
+    }
+
+    #hero h2 {
+        font-size: 36px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+
+    #about img {
+        width: 100%;
+    }
+
+    .services-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid .service {
+        padding: 30px;
+    }
+
+     .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 80%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .menu-item ul {
+        text-align: left;
+    }
+
+    .gallery-grid img {
+        margin-bottom: 20px;
+    }
+
+    #contact input[type="text"],
+    #contact input[type="email"],
+    #contact textarea {
+        font-size: 14px;
+    }
+}
+
+#g12g
+{
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #fdfdfd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Важно для правильной ширины */
+}
+.container {
+text-align: center;   
+}
+button {
+    background-color: #ffb516;
+color: #e9e9e9;
+padding: 15px 30px;
+text-decoration: none;
+font-size: 16px;
+border-radius: 8px; /* Более скругленные углы */
+margin-top: 20px;
+display: inline-block;
+transition: background-color 0.3s ease;
+box-shadow: 0 3px 5px rgba(255, 0, 0, 0.2); /* Тень для кнопки */
+}
+
+button:hover {
+    background-color: #292929;
+}
+}
