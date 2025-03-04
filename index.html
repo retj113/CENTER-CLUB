@@ -10,36 +10,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <div class="container">
-                <div class="logo-and-title">
-                    <img src="фотки\Снимок экрана 2025-02-26 005507.png" alt="Логотип Клуба" class="logo"width="100" height="100">
-                    <span class="club-name">CENTER CLUB</span>
-                  </div>
-            
-            <nav> 
-                <ul>
-                    <li><a href="index.html">О нас</a></li>
-                    <li><a href="afeha.html">Афиша</a></li>
-                    <li><a href="arenda.html">Аренда</a></li>
-                    <li><a href="arxih.html">Архив</a></li>
-                    <li><a href="contact.html">Забронировать</a></li>
-                </ul>
-            </nav>
-        </div>
-    
-    </header>
 
+<header>
+    <div class="logo">
+      <img src="фотки\Снимок экрана 2025-02-26 005507.png" alt="Логотип">
+    </div>
+    <button class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">О нас</a></li>
+          <li><a href="afeha.html">Афиша</a></li>
+          <li><a href="arenda.html">Аренда</a></li>
+          <li><a href="arxih.html">Архив</a></li>
+          <li><a href="contact.html">Забронировать</a></li>
+    </ul>
+  </nav>
+</header>
+
+    
+      
+       
+      
+    
     <section id="hero">
         <div class="container">
             <h2>Идеальное место для вашего торжества!</h2>
             <p>Создайте незабываемый праздник в уютной и стильной обстановке.</p>
             <a href="contact.html" class="button">Забронировать</a>
-        </div>
-    </section>
+
+            </div> 
+</section>
+       
+       
+    
     <section id="about">
-        <div class="container">
+        <div class="container"> 
+          <head>
             <h2>О нас</h2>
     <div class="image-container">
         <img src="фотки\Снимок экрана 2025-02-19 174258.png" alt="Фото интерьера площадки"width="100" height="100">
@@ -54,146 +64,136 @@
         </div>
       </div>
     </section>
-      <section id="services">
-        <div class="container">
-          <h2>ПАРАМЕТРЫ ПЛОЩАДКИ</h2>
-          
-      <div class="columns-container">
-        <div class="column">
-            <div class="row"><h2>1000</h2></div>
-          <div class="row"> масимальное количество гостей единовременно</div>
-          <div class="row"><h2>700 кв.м.</h2></div>
-          <div class="row"> общая площадь</div>
-          <div class="row"><h2>3</h2></div>
-          <div class="row"> фунцкиональных зала, объединенных общей входной группой</div>
-        </div>
-        <div class="column">
-            <div class="row"><h2>80</h2></div> 
-          <div class="row">человек — вместимость VIP-зон на подиумах вокруг сцены</div>
-          <div class="row"><h2>КАРАОКЕ</h2></div>
-          <div class="row"> профессиональная система Evolution Pro 2</div>
-          <div class="row"><h2>ГРИМЁРНЫЕ</h2> </div>
-          <div class="row">гримерные комнаты с отдельным выходом в подземный паркинг, туалетной комнатой, дверью, запирающейся на манитный ключ</div>
-        </div>
-        <div class="column">
-            <div class="row"><h2>СЦЕНА</h2></div>
-          <div class="row">профессиональный концертно–сценический свет и звук</div>
-          <div class="row"><h2>ТЕХЗОНА</h2></div>
-          <div class="row"> отдельная зона для звукорежиссера, светотехника, VJ</div>
-          <div class="row"><h2>2 ГАРДЕРОБА</h2></div>
-          <div class="row"> ёмкостью 1000 мест</div>
-        </div>
-
-        <div class="column">
-          <div class="row"></div>
-          <div class="row"><h2>FREE WIFI</h2></div>
-          <div class="row"></div>
-        </div>
-      </section>
+    </head>
+    <head>
+      <title>Центрирование слова (Flexbox, Изолированные стили)</title>
+      <style>
+        /* Стили для контейнера столбцов */
+        .column-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding: 20px;
+        }
+    
+        /* Стили для самих столбцов */
+        .column-container .column {
+          width: calc(25% - 20px); /* 4 столбца */
+          background-color: #000000;
+          margin-bottom: 20px;
+          min-height: 100px;   /* Минимальная высота */
+          padding: 20px;
+          box-sizing: border-box; /* Важно для ширины */
+          display: flex;          /* Flexbox для центрирования */
+          justify-content: center; /* Горизонталь */
+          align-items: center;   /* Вертикаль */
+        }
+    
+        /* Адаптивность (медиа-запросы) */
+        @media (max-width: 768px) {
+          .column-container .column { width: calc(50% - 20px); } /* 2 столбца */
+        }
+    
+        @media (max-width: 480px) {
+          .column-container .column { width: 100%; } /* 1 столбец */
+        }
+      </style>
+    </head>
+    <body>
+      <div class="column-container">
+        <div class="column"><div class="row"><h2>1000</h2></div>
+        <div class="row"> масимальное количество гостей единовременно</div>
+        <div class="row"><h2>700 кв.м.</h2></div>
+        <div class="row"> общая площадь</div>
+        <div class="row"><h2>3</h2></div>
+        <div class="row"> фунцкиональных зала, объединенных общей входной группой</div>
+    </div>
+        <div class="column"><div class="row"><h2>80</h2></div> 
+        <div class="row">человек — вместимость VIP-зон на подиумах вокруг сцены</div>
+        <div class="row"><h2>КАРАОКЕ</h2></div>
+        <div class="row"> профессиональная система Evolution Pro 2</div>
+        <div class="row"><h2>ГРИМЁРНЫЕ</h2> </div>
+        <div class="row">гримерные комнаты с отдельным выходом в подземный паркинг, туалетной комнатой, дверью, запирающейся на манитный ключ</div>
+    </div>
+        <div class="column"><div class="row"><h2>СЦЕНА</h2></div>
+        <div class="row">профессиональный концертно–сценический свет и звук</div>
+        <div class="row"><h2>ТЕХЗОНА</h2></div>
+        <div class="row"> отдельная зона для звукорежиссера, светотехника, VJ</div>
+        <div class="row"><h2>2 ГАРДЕРОБА</h2></div>
+        <div class="row"> ёмкостью 1000 мест</div>
+    </div>
+        <div class="column"><h2>FREE WIFI</h2></div>
+      </div>
+      </div>
+    
+     
+    </body>
+   
       
         <section id="sova-day">
             <div class="container">
-                <h2>фотографии</h2> 
-          
-          
-          <div class="sova-container">
-  
-              <input type="radio" id="slide1" name="slider" checked>
-              <input type="radio" id="slide2" name="slider">
-              <input type="radio" id="slide3" name="slider">
-              <input type="radio" id="slide4" name="slider">
-              <input type="radio" id="slide5" name="slider">
-  
-              <div class="sova-images">
-                  <div class="slide">
-                      <img src="фотки\Снимок экрана 2025-02-26 204540.png" alt="Сова 1">
-                      <div class="fact-text">
-                      <p><strong></strong> .</p>
-                      </div>
-                  </div>
-                  <div class="slide">
-                      <img src="https://ucare.timepad.ru/f9c5fad3-2d31-4510-a3fd-3020d84dae35/-/preview/" alt="Сова 2">
-                      <div class="fact-text">
-                      <p><strong></strong> </p>
-                      </div>
-                  </div>
-                  <div class="slide">
-                      <img src="https://arispro.ru/images/detailed/12/aris_centr_14.jpg" alt="Сова 3">
-                      <div class="fact-text">
-                      <p><strong></strong> .</p>
-                      </div>
-                  </div>
-                  <div class="slide">
-                      <img src="https://static.tildacdn.com/tild6464-6135-4462-b836-656135636233/06_03_2020_CENTR__65.jpg" alt="Сова 4">
-                      <div class="fact-text">
-                      <p><strong></strong> .</p>
-                      </div>
-                  </div>
-                  <div class="slide">
-                      <img src="https://i.wfolio.com/x/Sjpgrm2v20FR6Cth5viRkzL_0dyRc0yk/9ZAr53SKb35Qfl1d5e6G5AqIciSqSaBm/2WCvUIqnhgD1PfUUqXZFQXE-lzz79WUI/zTJ-tXEGr-U49Gce-DYnJw4JJ7s17Xq9.jpg" alt="Сова 5">
-                      <div class="fact-text">
-                      <p><strong></strong> </p>
-                      </div>
-                  </div>
-              </div>
-              <div class="controls">
-                  <label for="slide1" class="control-button"></label>
-                  <label for="slide2" class="control-button"></label>
-                  <label for="slide3" class="control-button"></label>
-                  <label for="slide4" class="control-button"></label>
-                  <label for="slide5" class="control-button"></label>
-              </div>
-          </div>
-      </section>
-      </div>
-     <section id="план">
-    <style>
- 
-    .download-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #ffb516;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .download-button:hover {
-        background-color: #000000;
-    }
-    
-    .image-gallery {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .image-gallery img {
-            width: 400px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin: 0 10px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-</style>
-
-
-<body>
-<div class="container">
-    <h2>План Зала Клуба</h2>
-    <div class="image-gallery">
-        <img src="фотки\Снимок экрана 2025-02-26 003140.png" alt="Фото зала 1">
-        <img src="фотки\Снимок экрана 2025-02-26 003207.png" alt="Фото зала 2">
-        <img src="фотки\Снимок экрана 2025-02-26 003240.png" alt="Фото зала 3">
-    </div>
-    <p>Нажмите на кнопку ниже, чтобы скачать план зала в формате PDF.</p>
-    <a href="https://drive.google.com/drive/folders/1sZgeqFdrO61ITdzxx_n_c-flcqhqIvL8?usp=drive_link" download="https://drive.google.com/drive/folders/1sZgeqFdrO61ITdzxx_n_c-flcqhqIvL8?usp=drive_link" class="download-button">Скачать План Зала</a>
-</div>
-</body>
-</section>      
+                 <h1 class="main-title">фотографии</h1>
         
+           <body>
+           
+             <div class="slider-container">
+               <div class="arrows-container">
+                 <div class="arrow" onclick="prevImage()">&#10094;</div>
+                 <div class="image-container">
+                   <img src="фотки\Снимок экрана 2025-02-26 204540.png" alt="Изображение 1" id="img1" class="active">
+                   <img src="https://arispro.ru/images/detailed/12/aris_centr_14.jpg" alt="Изображение" alt="Изображение 2" id="img2">
+                   <img src="https://static.tildacdn.com/tild6464-6135-4462-b836-656135636233/06_03_2020_CENTR__65.jpg" alt="Изображение 3" id="img3">
+                   <img src="https://ucare.timepad.ru/f9c5fad3-2d31-4510-a3fd-3020d84dae35/-/preview/" alt="Изображение 4" id="img4">
+                   <img src="https://i.wfolio.com/x/Sjpgrm2v20FR6Cth5viRkzL_0dyRc0yk/9ZAr53SKb35Qfl1d5e6G5AqIciSqSaBm/2WCvUIqnhgD1PfUUqXZFQXE-lzz79WUI/zTJ-tXEGr-U49Gce-DYnJw4JJ7s17Xq9.jpg" alt="Изображение 5" id="img5">
+                 </div>
+                 <div class="arrow" onclick="nextImage()">&#10095;</div>
+               </div>
+             </div>
+           
+             <script>
+               let currentImage = 1;
+           
+               function showImage(index) {
+                 for (let i = 1; i <= 5; i++) {
+                   document.getElementById("img" + i).classList.remove("active");
+                 }
+                 document.getElementById("img" + index).classList.add("active");
+               }
+           
+               function nextImage() {
+                 currentImage++;
+                 if (currentImage > 5) { currentImage = 1; }
+                 showImage(currentImage);
+               }
+           
+               function prevImage() {
+                 currentImage--;
+                 if (currentImage < 1) { currentImage = 5; }
+                 showImage(currentImage);
+               }
+           
+               showImage(currentImage);
+             </script>
+           
+           </body>
+          </div>
+      
+        <section id="план">
+          <body>
+            <h1 class="main-title">План Зала </h1>
+  
+              <div class="hall-container">
+                <div class="hall-images">
+                  <img src="фотки\Снимок экрана 2025-02-26 003140.png" alt="Фото зала 1">
+                  <img src="фотки\Снимок экрана 2025-02-26 003207.png" alt="Фото зала 2">
+                  <img src="фотки\Снимок экрана 2025-02-26 003240.png" alt="Фото зала 3">
+                </div>
+                <p>Нажмите на кнопку ниже, чтобы скачать план зала в формате PDF.</p>
+                <a href="cc-c1504.pdf" download class="hall-button">Скачать план зала</a>
+              </div>
+            
+          </body>
+  </section> 
 
          
  <footer>         
