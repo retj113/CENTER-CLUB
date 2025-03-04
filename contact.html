@@ -12,48 +12,70 @@
 </head>
 <body>
     <header>
-        <div class="container">
-                <div class="logo-and-title">
-                    <img src="фотки\Снимок экрана 2025-02-26 005507.png" alt="Логотип Клуба" class="logo"width="100" height="100">
-                    <span class="club-name">CENTER CLUB</span>
-                  </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">О нас</a></li>
-                    <li><a href="afeha.html">Афиша</a></li>
-                    <li><a href="arenda.html">Аренда</a></li>
-                    <li><a href="arxih.html">Архив</a></li>
-                    <li><a href="contact.html">Забронировать</a></li>
-                </ul>
-            </nav>
+      <div class="site-header-container">
+        <div class="logo-and-title">
+          <img src="фотки\Снимок экрана 2025-02-26 005507.png" alt="Логотип Клуба" class="logo" width="100" height="100">
+          <div class="club-title">
+            <ul>
+              <li><a href="index.html">
+                  <h2>CENTER CLUB</h2>
+                </a></li>
+            </ul>
+          </div>
         </div>
-    </header>
-   
     
-    <section id="g12g">
-</head>
-<body>
-    <div class="container">
-        <h1>Забронировать Клуб</h1>
-        <form action="PHP.php" method="post"> 
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="date">Дата:</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="guests">Количество гостей:</label>
-            <input type="text" id="guests" name="guests" required>
-
-            <label for="message">Дополнительные пожелания:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <button type="submit">Забронировать</button>
-        </form>
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+    
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">О нас</a></li>
+            <li><a href="afeha.html">Афиша</a></li>
+            <li><a href="arenda.html">Аренда</a></li>
+            <li><a href="arxih.html">Архив</a></li>
+            <li><a href="contact.html">Забронировать</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+   
+   </head> 
+   <section id="g12g" class="booking-section">  <!-- Добавлен класс для стилизации -->
+    <div class="booking-container"> <!-- Переименован класс контейнера -->
+      <h1>Забронировать Клуб</h1>
+      <form action="PHP.php" method="post" class="booking-form"> <!-- Добавлен класс для формы -->
+        <div class="form-group">  <!-- Группировка label и input -->
+          <label for="name">Имя:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="date">Дата:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="guests">Количество гостей:</label>
+          <input type="text" id="guests" name="guests" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="message">Дополнительные пожелания:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+  
+        <button type="submit">Забронировать</button>
+      </form>
     </div>
-</body>
-</sectio>
+  </section>
 </html>

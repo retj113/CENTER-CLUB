@@ -25,97 +25,156 @@ body {
     transition: color 0.3s ease; /* Плавный переход цвета */
   }
 
-/* Общие стили для шапки */
-/* Общие стили для шапки (как и раньше) */
+/* Стили для шапки */
+
+   /* Общие стили */
 header {
-  background-color: #000000;
+  background-color: #0f0f0f;
   padding: 10px 20px;
+  color: #ffffff;
+  }
+  
+  .site-header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Распределяем элементы по краям */
+  align-items: center; /* Выравниваем элементы по вертикали */
+  width: 100%;
+  }
+  
+  .logo-and-title {
+  display: flex;
   align-items: center;
-}
-
-.logo img {
+  }
+  
+  .logo img {
   max-height: 50px;
-}
-
-/* Стили для кнопки "гамбургер-меню" */
-.menu-toggle {
+  height: auto;
+  width: auto;
+  margin-right: 10px;
+  display: block;
+  }
+  
+  .club-title {
+  margin: 0;
+  }
+  
+  .club-title ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  
+  .club-title li {
+  margin: 0;
+  }
+  
+  .club-title a {
+  text-decoration: none;
+  color: inherit;
+  }
+  
+  h2 {
+  font-size: 24px;
+  margin: 0;
+  }
+  
+  /* Стили для кнопки "гамбургер-меню" */
+  .menu-toggle {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   display: none; /* Скрываем кнопку на больших экранах */
-}
-
-.menu-toggle span {
+  z-index: 10;  /*  Убеждаемся, что кнопка находится поверх других элементов */
+  }
+  
+  .menu-toggle span {
   display: block;
   width: 25px;
   height: 3px;
   background-color: #ffffff;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-}
-
-/* Стили для навигации */
-.main-nav ul {
+  }
+  
+  /* Стили для навигации */
+  .main-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-}
-
-.main-nav li {
-  margin-left: 20px;
-}
-
-/* Медиа-запрос для мобильных устройств */
-@media (max-width: 768px) {
-  header {
-    flex-wrap: wrap; /* Разрешаем элементам переноситься на новую строку */
-    position: relative; /* Для позиционирования кнопки */
   }
-
-  .menu-toggle {
-    display: block; /* Показываем кнопку на маленьких экранах */
-    position: absolute; /* Позиционируем кнопку в правом верхнем углу */
-    top: 10px;
-    right: 20px;
-  }
-
-  .main-nav {
-    width: 100%; /* Занимаем всю ширину экрана */
-    display: none; /* Скрываем навигацию по умолчанию */
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  
   .main-nav li {
-    margin: 10px 0;
+  margin-left: 20px;
   }
-
-  /* Стили для кнопки "гамбургер-меню" в активном состоянии (когда меню открыто) */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  
+  .main-nav a {
+  color: inherit;
+  text-decoration: none;
   }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+  
+  /* Скрываем чекбокс */
+  #menu-checkbox {
+  display: none;
   }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  
+  /* Медиа-запрос для мобильных устройств */
+  @media (max-width: 768px) {
+    .site-header-container {
+  flex-direction: column; /* Элементы в колонку */
+  align-items: flex-start; /*  выравниваем по левому краю */
   }
-
-  /* Показываем навигацию, когда кнопка активна */
-  .main-nav.active {
-    display: block;
+  
+  .logo-and-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /*  Логотип и заголовок по краям */
+  align-items: center;
+  margin-bottom: 10px;
   }
-}
-
+  
+  .menu-toggle {
+  display: block;
+  position: absolute;         /*  Абсолютное позиционирование */
+  top: 10px;                  /*  Позиционируем кнопку */
+  right: 20px;
+  z-index: 10;  /* Убеждаемся, что кнопка находится поверх других элементов */
+  }
+  
+  .main-nav {
+  width: 100%;
+  display: none;
+  margin-top: 10px; /* Отступ между кнопкой и меню */
+  }
+  
+  .main-nav ul {
+  flex-direction: column;
+  align-items: flex-start;
+  }
+  
+  .main-nav li {
+  margin: 10px 0;
+  }
+  
+  /* Отображаем навигацию, когда чекбокс отмечен */
+  #menu-checkbox:checked ~ .main-nav {
+  display: block;
+  }
+  
+  /* Стили для кнопки "гамбургер-меню" в активном состоянии */
+  #menu-checkbox:checked + .menu-toggle span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  }
+  
+  #menu-checkbox:checked + .menu-toggle span:nth-child(2) {
+  opacity: 0;
+  }
+  
+  #menu-checkbox:checked + .menu-toggle span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  }
+  }
 /* Стили для секции Hero */
 
 #hero {
@@ -509,51 +568,6 @@ footer {
     }
 }
 
-#g12g
-{
-h1 {
-    text-align: center;
-    color: #ffffff;
-    font-size: 36px;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #fdfdfd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Важно для правильной ширины */
-}
-.container {
-text-align: center;   
-}
-button {
-    background-color: #ffb516;
-color: #e9e9e9;
-padding: 15px 30px;
-text-decoration: none;
-font-size: 16px;
-border-radius: 8px; /* Более скругленные углы */
-margin-top: 20px;
-display: inline-block;
-transition: background-color 0.3s ease;
-box-shadow: 0 3px 5px rgba(255, 0, 0, 0.2); /* Тень для кнопки */
-}
-
-button:hover {
-    background-color: #292929;
-}
-}
 
 #план {
 font: 0
@@ -612,5 +626,100 @@ font: 0
 
 
  
-   
+    #g12g { /* Секция бронирования */
+      background-color: #333; /* Более темный фон */
+      padding: 40px; /* Больше отступов */
+      border-radius: 15px; /* Закругленные углы */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+      margin: 20px auto; /* Центрирование секции */
+      max-width: 800px; /* Ограничение ширины */
+    }
+    
+    .booking-container {
+      text-align: center;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #ffb516; /* Золотой акцент */
+      font-size: 42px; /* Больше размер */
+      margin-bottom: 30px; /* Больше отступ снизу */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Тень для текста */
+      font-family: 'Arial', sans-serif; /* Более приятный шрифт */
+      letter-spacing: 1px; /* Расстояние между буквами */
+    }
+    
+    .booking-form {
+      display: flex; /* Flexbox для формы */
+      flex-direction: column; /* Элементы в колонку */
+      align-items: stretch; /* Растягиваем элементы по ширине */
+      max-width: 600px; /* Ограничение ширины формы */
+      margin: 0 auto; /* Центрирование формы */
+    }
+    
+    .form-group {
+      margin-bottom: 20px; /* Отступ между группами элементов */
+      text-align: left; /* Выравнивание текста слева */
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px; /* Отступ подписей */
+      color: #fff; /* Белый цвет текста */
+      font-size: 18px; /* Больше размер */
+      font-weight: bold; /* Жирный шрифт */
+      font-family: 'Helvetica', sans-serif; /* Приятный шрифт */
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 12px; /* Больше отступов */
+      margin-bottom: 0; /* Убираем отступ (уже есть у form-group) */
+      border: none; /* Убираем рамку */
+      border-radius: 8px; /* Более скругленные углы */
+      box-sizing: border-box;
+      font-size: 16px; /* Размер текста */
+      font-family: 'Verdana', sans-serif; /* Приятный шрифт */
+      background-color: #f0f0f0; /* Светло-серый фон */
+      color: #333; /* Темный цвет текста */
+      transition: box-shadow 0.3s ease; /* Анимация тени */
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="date"]:focus,
+    textarea:focus {
+      outline: none; /* Убираем обводку при фокусе */
+      box-shadow: 0 0 8px rgba(255, 181, 22, 0.5); /* Золотая тень при фокусе */
+    }
+    
+    textarea {
+      resize: vertical; /* Разрешаем изменять высоту */
+      min-height: 150px; /* Минимальная высота */
+    }
+    
+    button {
+      background-color: #ffb516;
+      color: #333; /* Темный цвет текста */
+      padding: 18px 36px; /* Больше отступов */
+      text-decoration: none;
+      font-size: 20px; /* Больше размер */
+      border-radius: 10px; /* Более скругленные углы */
+      margin-top: 30px; /* Больше отступ сверху */
+      display: inline-block;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Анимация тени */
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Более выраженная тень */
+      border: none; /* Убираем рамку */
+      font-weight: bold; /* Жирный шрифт */
+      font-family: 'Georgia', serif; /* Приятный шрифт */
+      cursor: pointer; /* Меняем курсор при наведении */
+    }
+    
+    button:hover {
+      background-color: #e09b08; /* Более темный цвет при наведении */
+      box-shadow: 0 7px 12px rgba(0, 0, 0, 0.5); /* Больше тень при наведении */
+    }
  

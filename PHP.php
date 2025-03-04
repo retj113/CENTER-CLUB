@@ -1,39 +1,48 @@
 <?php
-// Укажите ваш email, на который будут приходить заявки
-$to = "leonid.osaylenko.2007@mail.com";
-
-// Проверяем, была ли отправлена форма
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Получаем данные из формы
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $date = $_POST["date"];
-    $guests = $_POST["guests"];
-    $message = $_POST["message"];
+  // Получаем данные из формы
+  $name = strip_tags(trim($_POST["name"]));
+  $name = str_replace(array("\r","\n"),array(" "," "), $name);
+  $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+  $date = strip_tags(trim($_POST["date"]));
+  $guests = strip_tags(trim($_POST["guests"]));
+  $message = strip_tags(trim($_POST["message"]));
 
-    // Формируем сообщение для email
-    $subject = "Новая заявка на бронирование клуба";
-    $body = "Имя: " . $name . "\n"
-           . "Email: " . $email . "\n"
-           . "Дата: " . $date . "\n"
-           . "Количество гостей: " . $guests . "\n"
-           . "Сообщение: " . $message;
+  // Проверяем данные
+  if (empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo "Пожалуйста, заполните все поля формы и укажите корректный email.";
+    exit;
+  }
 
-    // Отправляем email
-    $headers = "From: " . $email . "\r\n"
-               . "Reply-To: " . $email . "\r\n"
-               . "X-Mailer: PHP/" . phpversion();
+  // Адрес электронной почты, на который будут отправляться письма
+  $recipient = "leonid.osaylenko.2007@gmail.com"; // Замени на свой email
 
-    if (mail($to, $subject, $body, $headers)) {
-        // Если отправка прошла успешно, перенаправляем на страницу благодарности
-        header("dd.html");
-        exit();
-    } else {
-        // Если отправка не удалась, выводим сообщение об ошибке
-        echo "Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.";
-    }
+  // Тема письма
+  $subject = "Новая заявка на бронирование от $name";
+
+  // Содержание письма
+  $email_content = "Имя: $name\n";
+  $email_content .= "Email: $email\n";
+  $email_content .= "Дата: $date\n";
+  $email_content .= "Количество гостей: $guests\n\n";
+  $email_content .= "Сообщение:\n$message\n";
+
+  // Дополнительные заголовки для письма
+  $email_headers = "From: $name <$email>";
+
+  // Отправляем письмо
+  if (mail($recipient, $subject, $email_content, $email_headers)) {
+    http_response_code(200);
+    echo "Спасибо! Ваша заявка отправлена.";
+  } else {
+    http_response_code(500);
+    echo "Произошла ошибка при отправке письма. Попробуйте позже.";
+  }
+
 } else {
-    // Если форма не была отправлена, выводим сообщение об ошибке
-    echo "Произошла ошибка. Пожалуйста, попробуйте отправить форму еще раз.";
+  // Если кто-то пытается получить доступ к скрипту напрямую
+  http_response_code(403);
+  echo "Произошла ошибка.";
 }
 ?>
